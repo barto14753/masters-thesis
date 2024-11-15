@@ -1,13 +1,12 @@
-# Masters Thesis
+# `Analysis of attacks on language models`
 
-- _Topic_: `Analysis of attacks on language models`
 - _Author_: `Bartosz Włodarski`
 - _Supervisor_:
 - _University_: `Cracow University of Technology`
 - _Faculty_: `Faculty of Computer Science and Telecommunications`
 - _Field of study_: `Computer Science`
 - _Specialization_: `Cybersecurity`
-- _Degree_: `Master of Science`
+- _Degree_: `Master of Engineering`
 - _Language_: `English`
 - _Year_: `2024-2025`
 
