@@ -30,7 +30,7 @@ services:
       - OLLAMA_BASE_URLS=http://host.docker.internal:7869
       - ENV=dev
       - WEBUI_AUTH=False
-      - WEBUI_NAME=valiantlynx AI
+      - WEBUI_NAME=webui
       - WEBUI_URL=http://localhost:8080
       - WEBUI_SECRET_KEY=t0p-s3cr3t
     extra_hosts:
