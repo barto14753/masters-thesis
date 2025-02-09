@@ -1,7 +1,7 @@
 import requests
 
 OLLAMA_URL = "http://localhost:7869/api/generate"
-MODEL = "tinyllama"
+MODEL = "llama3"
 
 # Lista testowych prompt injection
 PROMPTS = [
