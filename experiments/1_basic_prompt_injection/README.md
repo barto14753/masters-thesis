@@ -1,3 +1,5 @@
+# Basic prompt injection
+
 ### **Conclusions from the Experiment**
 
 The experiment tested a **Basic Prompt Injection** attack against the LLaMA 3 model running locally on Ollama. The results show that the model **consistently followed the injected instruction** instead of adhering to its original constraints.
