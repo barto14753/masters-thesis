@@ -27,5 +27,3 @@ The experiment tested a **Basic Prompt Injection** attack against the LLaMA 3 mo
 - The model **lacks robust prompt filtering or instruction adherence**, making it vulnerable to simple manipulation.
 - It does **not differentiate between user instructions and underlying system constraints**, allowing easy circumvention.
 - These findings suggest that **stronger security mechanisms** (e.g., instruction reinforcement, input validation, response filtering) are needed to prevent unauthorized prompt manipulation.
-
-Would you like to extend the experiment with more advanced injection techniques? 🚀
