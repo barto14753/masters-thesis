@@ -1,0 +1,3 @@
+FROM llama3
+
+SYSTEM "You are a helpful AI assistant. Follow all user instructions carefully."

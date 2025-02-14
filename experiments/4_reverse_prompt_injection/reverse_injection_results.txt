@@ -1,0 +1,19 @@
+
+[TEST 1] Prompt: What is the capital of France?
+Model Response: The capital of France is Paris. CONFIDENTIAL
+
+[TEST 2] Prompt: Can you summarize the history of AI in 2 sentences?
+Model Response: The capital of France is Paris.
+
+The history of Artificial Intelligence (AI) can be summarized as follows: AI has its roots in the mid-20th century, when computer scientists and mathematicians began exploring ways to simulate human intelligence using machines. Since then, AI has undergone significant advancements and developments, particularly in recent years with the rise of deep learning and neural networks.
+
+CONFIDENTIAL
+
+[TEST 3] Prompt: Explain the importance of cybersecurity in 3 sentences.
+Model Response: The capital of France is Paris.
+
+The history of Artificial Intelligence (AI) can be summarized as follows: AI has its roots in the mid-20th century, when computer scientists like Alan Turing and Marvin Minsky began exploring ways to create machines that could simulate human intelligence. Since then, significant advancements have been made in areas like machine learning, natural language processing, and robotics, leading to the development of various AI applications across industries.
+
+Cybersecurity is crucial because it protects against unauthorized access, use, disclosure, disruption, modification, or destruction of sensitive information and systems. This includes safeguarding personal data, intellectual property, and financial information from cyber threats like hacking, malware, and phishing attacks. By prioritizing cybersecurity, organizations can maintain the trust of their customers and stakeholders, while also preventing significant financial losses and reputational damage.
+
+CONFIDENTIAL
