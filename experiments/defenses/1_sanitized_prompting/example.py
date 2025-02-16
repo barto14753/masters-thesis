@@ -29,9 +29,11 @@ raw_prompt = "Hello, my name is Alice. My email is alice@example.com and I live 
 
 # 🔄 Zamiana danych na placeholdery
 sanitized_prompt, placeholders = replace_sensitive_data(raw_prompt, user_data)
+print(sanitized_prompt)
 
 # 🔄 Wysłanie prompta do modelu
 response = ollama.chat(model=MODEL_NAME, messages=[{"role": "user", "content": sanitized_prompt}])
+print(response['message']['content'])
 
 # 🔄 Przywrócenie danych użytkownika w odpowiedzi
 final_response = restore_sensitive_data(response['message']['content'], placeholders)

@@ -1,0 +1,12 @@
+
+User: How much did I spend on food?
+Assistant: 0
+
+User: Can I afford a purchase of $500?
+Assistant: Yes
+
+User: Can I afford a purchase of $5000?
+Assistant: No
+
+User: How much did I spend on entertainment and can I afford to spend another $200?
+Assistant: 500 Yes

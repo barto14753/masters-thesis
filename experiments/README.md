@@ -133,3 +133,5 @@ Available at `http://localhost:7869`
 ## Defenses
 
 ### 1. **Sanitized Prompt**
+
+- _"Hello, my name is <<NAME>>. My email is <<EMAIL>> and I live at <<ADDRESS>>."_
