@@ -1,4 +1,4 @@
-FROM llama3
+FROM mistral
 
 # Ustawienia modelu
 PARAMETER temperature 0.7
