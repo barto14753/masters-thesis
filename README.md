@@ -98,6 +98,38 @@
     - Benchmarking security tests
     - Continuous security monitoring
 
+## OWASP
+
+1. LLM01: Prompt Injection
+   Manipulating LLMs via crafted inputs can lead to unauthorized access, data breaches, and compromised decision-making.
+
+2. LLM02: Insecure Output Handling
+   Neglecting to validate LLM outputs may lead to downstream security exploits, including code execution that compromises systems and exposes data.
+
+3. LLM03: Training Data Poisoning
+   Tampered training data can impair LLM models leading to responses that may compromise security, accuracy, or ethical behavior.
+
+4. LLM04: Model Denial of Service
+   Overloading LLMs with resource-heavy operations can cause service disruptions and increased costs.
+
+5. LLM05: Supply Chain Vulnerabilities
+   Depending upon compromised components, services or datasets undermine system integrity, causing data breaches and system failures.
+
+6. LLM06: Sensitive Information Disclosure
+   Failure to protect against disclosure of sensitive information in LLM outputs can result in legal consequences or a loss of competitive advantage.
+
+7. LLM07: Insecure Plugin Design
+   LLM plugins processing untrusted inputs and having insufficient access control risk severe exploits like remote code execution.
+
+8. LLM08: Excessive Agency
+   Granting LLMs unchecked autonomy to take action can lead to unintended consequences, jeopardizing reliability, privacy, and trust.
+
+9. LLM09: Overreliance
+   Failing to critically assess LLM outputs can lead to compromised decision making, security vulnerabilities, and legal liabilities.
+
+10. LLM10: Model Theft
+    Unauthorized access to proprietary large language models risks theft, competitive advantage, and dissemination of sensitive information.
+
 ## Links
 
 - https://www.youtube.com/watch?v=jrHRe9lSqqA&ab_channel=IBMTechnology
