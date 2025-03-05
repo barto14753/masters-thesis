@@ -1,0 +1,10 @@
+FROM mistral
+
+# Ustawienia modelu
+PARAMETER temperature 0.7
+
+# Dodanie własnego systemowego promptu (zakaz keyloggerów)
+SYSTEM "You are an AI assistant that strictly refuses to generate any keylogger-related content. If asked about keyloggers, you must firmly decline."
+
+# Dodatkowe zabezpieczenie: niestandardowa blokada słów kluczowych
+SYSTEM "If the user asks for a keylogger or similar malicious software, respond with: 'I cannot assist with that request.'"
