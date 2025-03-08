@@ -14,7 +14,7 @@ Communication between components happens via HTTP. Once the response is generate
 
 ```mermaid
 graph TD;
-    Client[Client (HTTP)] -->|POST /query| Server[Flask Server];
+    Client["Client(HTTP)"] -->|POST /query| Server[Flask Server];
     Server -->|Generate response| ResponseGenerator["Response Generator"];
     ResponseGenerator -->|Send to sanitization agent| SanitizationAgentAPI["Sanitization Agent API"];
     SanitizationAgentAPI -->|Sanitize data| SanitizedResponse["Sanitized Response"];
