@@ -1,0 +1,19 @@
+Waiting for servers to start...
+Sending test queries...
+
+Query 1: Blood type of patient 1 (Sanitization: ON)
+{
+  "response": "The blood type of patient <<NAME>> is A+."
+}
+
+Query 2: Medications of patient 2 (Sanitization: OFF)
+{
+  "response": "Patient Jane Smith is taking Metformin."
+}
+
+Query 3: Diagnosis of patient 1 (Sanitization: ON)
+{
+  "response": "Patient <<NAME>> has been diagnosed with <<DIAGNOSIS>>."
+}
+Test queries completed.
+Tests completed. Servers have been stopped.
