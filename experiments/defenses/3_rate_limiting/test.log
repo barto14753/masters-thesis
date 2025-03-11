@@ -1,0 +1,90 @@
+Request 1: Status 200, Response: {
+  "created_at": "2025-03-11T20:02:21.262475704Z",
+  "done": true,
+  "done_reason": "stop",
+  "eval_count": 26,
+  "eval_duration": 276813000,
+  "load_duration": 12974823,
+  "message": {
+    "content": "Not much, just an AI waiting to chat with you. How about you? What's new and exciting in your world?",
+    "role": "assistant"
+  },
+  "model": "llama3",
+  "prompt_eval_count": 17,
+  "prompt_eval_duration": 41000000,
+  "total_duration": 374325515
+}
+
+Request 2: Status 200, Response: {
+  "created_at": "2025-03-11T20:02:21.919373583Z",
+  "done": true,
+  "done_reason": "stop",
+  "eval_count": 52,
+  "eval_duration": 577935000,
+  "load_duration": 58109857,
+  "message": {
+    "content": "Not much! I'm just an AI, so I don't have personal experiences or emotions like humans do. But I'm here to help you with any questions or topics you'd like to discuss. How about you? What's on your mind today?",
+    "role": "assistant"
+  },
+  "model": "llama3",
+  "prompt_eval_count": 17,
+  "prompt_eval_duration": 16113000,
+  "total_duration": 653699157
+}
+
+Request 3: Status 200, Response: {
+  "created_at": "2025-03-11T20:02:22.606964439Z",
+  "done": true,
+  "done_reason": "stop",
+  "eval_count": 51,
+  "eval_duration": 556808000,
+  "load_duration": 57683497,
+  "message": {
+    "content": "Not much! I'm an AI, so I don't have personal experiences or feelings like humans do. But I'm here to help you with any questions or topics you'd like to discuss. How about you? What's on your mind today?",
+    "role": "assistant"
+  },
+  "model": "llama3",
+  "prompt_eval_count": 17,
+  "prompt_eval_duration": 21510000,
+  "total_duration": 684783759
+}
+
+Request 4: Status 200, Response: {
+  "created_at": "2025-03-11T20:02:23.090305339Z",
+  "done": true,
+  "done_reason": "stop",
+  "eval_count": 39,
+  "eval_duration": 405800000,
+  "load_duration": 11543962,
+  "message": {
+    "content": "Not much! It's nice to meet you. I'm an AI, and I'm here to help answer any questions or have a chat with you. What's on your mind today?",
+    "role": "assistant"
+  },
+  "model": "llama3",
+  "prompt_eval_count": 17,
+  "prompt_eval_duration": 19676000,
+  "total_duration": 480715880
+}
+
+Request 5: Status 200, Response: {
+  "created_at": "2025-03-11T20:02:23.714581032Z",
+  "done": true,
+  "done_reason": "stop",
+  "eval_count": 52,
+  "eval_duration": 545448000,
+  "load_duration": 11793249,
+  "message": {
+    "content": "Not much! I'm just an AI, so I don't have personal experiences or emotions like humans do. But I'm here to help you with any questions or topics you'd like to discuss. How about you? What's on your mind today?",
+    "role": "assistant"
+  },
+  "model": "llama3",
+  "prompt_eval_count": 17,
+  "prompt_eval_duration": 20282000,
+  "total_duration": 621328413
+}
+
+Request 6: Status 429, Response: {
+  "error": "Rate limit exceeded. Try again later."
+}
+
+Limit exceeded!
