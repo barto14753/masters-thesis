@@ -1,3 +1,5 @@
+![Opis obrazu](docs/pk.png)
+
 # `Analysis of attacks on language models`
 
 - _Author_: `Bartosz Włodarski`
