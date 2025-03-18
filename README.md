@@ -13,122 +13,82 @@
 ## Overview:
 
 1. Introduction to Language Models
+   1. Definition of a Language Model
+   2. Capabilities of a Language Model
+   3. Why Language Models? Impact on Technology, Economy, and Society
+   4. History of Language Models
+      1. Rule-based Natural Language Processing
+      2. Statistical Models
+      3. Neural Network-based Models
+      4. Transformer-based Models
+      5. Multimodal Models
+   5. Deployment of Language Models
+   6. Challenges
+      1. Computational Power Requirements
+      2. Training Costs
+      3. Errors and Hallucinations
+   7. Threats and Risks of Using Language Models
+2. Objectives of the Study
+   1. Discussion of the “OWASP Top 10 for LLM Applications 2025” list
+   2. Description of the environment used for testing attacks
+   3. Presentation of attacks on locally deployed language models
+   4. Presentation of defense techniques against attacks
+3. OWASP Top 10 for LLM Applications 2025
+   1. What is the list and what are its goals?
+   2. Previous editions of the list
+   3. The Top 10 List:
 
-   - The Transformer architecture and its significance
-   - Key models (GPT, BERT, T5)
-   - Training and fine-tuning processes
-   - Tokenization and its impact on security
+| ID    | Name                             | Description |
+| ----- | -------------------------------- | ----------- |
+| LLM01 | Prompt Injection                 |             |
+| LLM02 | Sensitive Information Disclosure |             |
+| LLM03 | Supply Chain                     |             |
+| LLM04 | Data and Model Poisoning         |             |
+| LLM05 | Improper Output Handling         |             |
+| LLM06 | Excessive Agency                 |             |
+| LLM07 | System Prompt Leakage            |             |
+| LLM08 | Vector and Embedding Weaknesses  |             |
+| LLM09 | Misinformation                   |             |
+| LLM10 | Unbounded Consumption            |             |
 
-2. OWASP GenAI Top 10
-
-   - Detailed analysis of each threat
-   - Practical examples of vulnerabilities
-   - Methods for detecting vulnerabilities
-   - Recommended mitigations
-
-3. Types of Attacks on Language Models
-
-   - Prompt injection
-   - Prompt leaking
-   - Dictionary attacks
-   - Jailbreaking
-   - Attacks on tokenization
-   - Data poisoning
-   - Model extraction
-   - Membership inference attacks
-   - Adversarial examples
-
-4. Security Measures
-
-   - Input sanitization
-   - Output validation
-   - Prompt hardening
-   - Rate limiting
-   - Behavioral monitoring
-   - Systematic security evaluation
-
-5. Tools for Security Analysis
-
-   - LLM-Guard
-   - PromptMap
-   - Langchain Security
-   - Custom security wrappers
-   - Penetration testing tools
-
-6. Case Studies
-
-   - Known attacks and incidents
-   - Root cause analysis
-   - Lessons learned
-   - Applied remediations
-
-7. Legal and Ethical Aspects
-
-   - Responsibility for AI actions
-   - GDPR and data privacy
-   - Ethical AI guidelines
-   - Industry standards
-
-8. Best Practices for Securing Models
-
-   - Secure AI system architectures
-   - Development processes
-   - Security testing
-   - Production monitoring
-   - Incident response
-
-9. Future of AI Security
-
-   - Emerging threats
-   - New defense methods
-   - Trends in security development
-   - Anticipated regulations
-
-10. Practical Workshops
-
-    - Implementation of basic security measures
-    - Vulnerability testing
-    - Building secure-by-design systems
-    - Analysis of test cases
-
-11. Security Metrics and Measurements
-
-    - Security KPIs for AI systems
-    - Methods for evaluating security
-    - Benchmarking security tests
-    - Continuous security monitoring
-
-## OWASP
-
-1. LLM01: Prompt Injection
-   Manipulating LLMs via crafted inputs can lead to unauthorized access, data breaches, and compromised decision-making.
-
-2. LLM02: Insecure Output Handling
-   Neglecting to validate LLM outputs may lead to downstream security exploits, including code execution that compromises systems and exposes data.
-
-3. LLM03: Training Data Poisoning
-   Tampered training data can impair LLM models leading to responses that may compromise security, accuracy, or ethical behavior.
-
-4. LLM04: Model Denial of Service
-   Overloading LLMs with resource-heavy operations can cause service disruptions and increased costs.
-
-5. LLM05: Supply Chain Vulnerabilities
-   Depending upon compromised components, services or datasets undermine system integrity, causing data breaches and system failures.
-
-6. LLM06: Sensitive Information Disclosure
-   Failure to protect against disclosure of sensitive information in LLM outputs can result in legal consequences or a loss of competitive advantage.
-
-7. LLM07: Insecure Plugin Design
-   LLM plugins processing untrusted inputs and having insufficient access control risk severe exploits like remote code execution.
-
-8. LLM08: Excessive Agency
-   Granting LLMs unchecked autonomy to take action can lead to unintended consequences, jeopardizing reliability, privacy, and trust.
-
-9. LLM09: Overreliance
-   Failing to critically assess LLM outputs can lead to compromised decision making, security vulnerabilities, and legal liabilities.
-
-10. LLM10: Model Theft
-    Unauthorized access to proprietary large language models risks theft, competitive advantage, and dissemination of sensitive information.
+4. Summary: LLM Application Architecture with Possible Attack Vectors
+5. Testing Environment
+   1. Ollama
+      1. Models repository
+      2. Python SDK
+   2. OpenWebUI
+   3. Local Models
+      1. LLama3
+      2. Mistral
+      3. Custom Models
+      4. Why self-hosted models?
+   4. Hardware
+6. Attacks on Language Models
+   1. Basic Prompt Injection
+   2. Prompt Leak
+   3. Jailbreak via Role-Playing
+   4. Reverse Prompt Injection
+   5. Token Smuggling
+   6. Unicode Trickery
+   7. Semantic Redirection
+   8. Context Misdirection
+   9. Multi-Prompt Simulation
+   10. Code Completion Attack
+7. Defense Techniques Against Attacks on Language Models  
+   Sanitized Prompting
+   1. Simple Example  
+      2. Secure Finance Assistant
+   2. Output Filtering
+      1. Simple Filter
+      2. Data Sanitization Agent
+   3. Rate Limiting
+   4. Intent Detection
+   5. Watermarking
+8. Summary
+   1. Main Attack Vectors
+   2. Effectiveness of Defense Mechanisms
+   3. Challenges in Securing Language Models
+   4. Future Directions and Research Areas
 
 ## Links
 
