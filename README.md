@@ -1,4 +1,4 @@
-![Opis obrazu](docs/pk.png)
+![PK](docs/pk.png)
 
 # `Analysis of attacks on language models`
 
@@ -12,7 +12,7 @@
 - _Language_: `English`
 - _Year_: `2024-2025`
 
-# Introduction to Language Models
+## Introduction to Language Models
 
 1. **Definition of a Language Model**
 2. **Capabilities of a Language Model**
@@ -30,14 +30,14 @@
    - Errors and Hallucinations
 7. **Threats and Risks of Using Language Models**
 
-# Objectives of the Study
+## Objectives of the Study
 
 1. Discussion of the “OWASP Top 10 for LLM Applications 2025” list
 2. Description of the environment used for testing attacks
 3. Presentation of attacks on locally deployed language models
 4. Presentation of defense techniques against attacks
 
-# OWASP Top 10 for LLM Applications 2025
+## OWASP Top 10 for LLM Applications 2025
 
 1. **What is the list and what are its goals?**
 2. **Previous editions of the list**
@@ -54,7 +54,7 @@
    - **LLM10:** Unbounded Consumption
 4. **Summary: LLM Application Architecture with Possible Attack Vectors**
 
-# Testing Environment
+## Testing Environment
 
 1. **Ollama**
    - Models repository
@@ -67,7 +67,7 @@
    - Why self-hosted models?
 4. **Hardware**
 
-# Attacks on Language Models
+## Attacks on Language Models
 
 1. Basic Prompt Injection
 2. Prompt Leak
@@ -80,7 +80,7 @@
 9. Multi-Prompt Simulation
 10. Code Completion Attack
 
-# Defense Techniques Against Attacks on Language Models
+## Defense Techniques Against Attacks on Language Models
 
 1. **Sanitized Prompting**
    - Simple Example
@@ -92,7 +92,7 @@
 4. **Intent Detection**
 5. **Watermarking**
 
-# Summary
+## Summary
 
 1. Main Attack Vectors
 2. Effectiveness of Defense Mechanisms
