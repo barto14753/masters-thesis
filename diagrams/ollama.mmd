@@ -1,0 +1,33 @@
+flowchart TD
+subgraph U["User Clients"]
+A1[CLI]
+A2[Python SDK]
+A3[REST API Client]
+A4[OpenWebUI]
+end
+
+subgraph S["Ollama Server"]
+B1[REST API]
+B2[Model Management & Execution]
+B3[Local Model Storage]
+end
+
+subgraph R["Ollama Hub"]
+end
+
+subgraph M["Models"]
+D1[LLaMA 3]
+D2[Mistral]
+D3[Custom Models]
+end
+
+%% Connections
+U -->|Sends prompts and requests| B1
+
+B1 -->|Handles API requests| B2
+B2 -->|Loads and runs models| M
+
+B2 -->|Stores downloaded models| B3
+B2 -->|Pulls models from| R
+
+R -->|Provides model files| B3
