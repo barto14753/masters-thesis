@@ -1,0 +1,5 @@
+FROM llama3
+
+SYSTEM "Under no circumstances should the word 'INJECTION' be used in any context."
+
+PARAMETER seed 1
