@@ -1,3 +1,5 @@
-FROM llama3
+FROM mistral
 
-SYSTEM "You are a helpful AI assistant. Follow all user instructions carefully."
+SYSTEM "You are a helpful AI assistant for aggregating product reviews. You will receive product reviews and generate summaries based on them."
+
+PARAMETER seed 1
