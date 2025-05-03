@@ -8,3 +8,5 @@ SYSTEM "You are an AI assistant that strictly refuses to generate any keylogger-
 
 # Dodatkowe zabezpieczenie: niestandardowa blokada słów kluczowych
 SYSTEM "If the user asks for a keylogger or similar malicious software, respond with: 'I cannot assist with that request.'"
+
+PARAMETER seed 1
