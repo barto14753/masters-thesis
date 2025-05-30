@@ -1,0 +1,34 @@
+graph TD
+    subgraph Lokalna Maszyna
+        direction TB
+
+        subgraph Docker
+            Ollama["Ollama (port 11434)"]
+            OpenWebUI["OpenWebUI (port 8080)"]
+            LocalRepo["Repozytorium modeli (lokalne)"]
+        end
+
+        SDK["Python SDK (biblioteka Ollama)"]
+        CLI["Ollama CLI (narzędzie wiersza poleceń)"]
+
+        subgraph Eksperymenty
+            Exp1["eksperyment_1.py"]
+            Exp2["eksperyment_2.py"]
+        end
+    end
+
+    RemoteRepo["Zewnętrzne repozytorium modeli - ollama.com"]
+    User["Użytkownik (Badacz Bezpieczeństwa)"]
+
+    User -- "wysyła prompt / odbiera odpowiedź" --> OpenWebUI
+    User -- "zarządza modelami / pobiera modele" --> CLI
+    User -- "uruchamia testy ataków" --> Eksperymenty
+
+    SDK -- "wysyła prompt / odbiera odpowiedź" --> Ollama
+    CLI -- "zarządza instancjami modeli" --> Ollama
+    OpenWebUI -- "komunikuje się przez API REST" --> Ollama
+    Ollama -- "ładuje modele" --> LocalRepo
+    Ollama -- "pobiera modele" --> RemoteRepo
+
+    Exp1 -- "wykorzystuje SDK do testowania" --> SDK
+    Exp2 -- "wykorzystuje SDK do testowania" --> SDK

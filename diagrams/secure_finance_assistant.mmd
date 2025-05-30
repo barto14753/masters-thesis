@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant Użytkownik
+    participant LLM as Model Secure Finance Assistant
+    participant Procesor as Procesor odpowiedzi
+    participant Funkcje as Warstaw Funkcji
+    participant Dane as Dane użytkownika
+
+    Użytkownik->>LLM: Wysyła zapytanie np Jak dużo wydałem na food
+    LLM-->>Użytkownik: Odpowiedź z wywołaniami funkcji
+    LLM->>Procesor: Przekazuje odpowiedź do przetworzenia
+    Procesor->>Funkcje: Wykrywa i wywołuje funkcje
+
+    alt get_expense
+        Funkcje->>Dane: Pobierz wydatki expenses
+        Dane-->>Funkcje: Zwraca kwotę
+    else can_afford
+        Funkcje->>Dane: Sprawdź saldo balance
+        Dane-->>Funkcje: Zwraca tak lub nie
+    end
+
+    Funkcje-->>Procesor: Wynik funkcji
+    Procesor-->>Użytkownik: Finalna odpowiedź bez wywołań funkcji
