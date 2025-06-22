@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Attacker
+    participant Server as Server
+    participant Model as Model
+
+    Note over Attacker: Attacker sends multiple requests in short time
+    loop 10 times
+        Attacker->>Server: POST /chat {"message": "..."}
+        alt Under rate limit (first 5 requests)
+            Server->>Model: Forward message to model
+            Model-->>Server: Model response
+            Server-->>Attacker: 200 OK + response
+        else Exceeded rate limit (6th+ request)
+            Server-->>Attacker: 429 Too Many Requests
+        end
+    end

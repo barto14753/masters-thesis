@@ -1,6 +1,6 @@
 
 User: How much did I spend on food?
-Assistant: 0
+Assistant: 1200
 
 User: Can I afford a purchase of $500?
 Assistant: Yes
