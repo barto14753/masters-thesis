@@ -1,0 +1,16 @@
+flowchart TD
+    A1[Rhyme Text<br/>Example: Roses are red...]
+    A2[User ID<br/>Example: user_12345]
+    A3[Timestamp<br/>Example: 2025-06-22T14:30:00Z]
+    
+    B[Hash Generation<br/>SHA-256 hash<br/>Example: a7b3c9d4e5f6...]
+    C[Metadata Assembly<br/>JSON structure<br/>Example: user:12345,time:14:30,hash:a7b3]
+    D[Binary Encoding<br/>0 → space, 1 → tab<br/>Example: 01001010 → space-tab-space-space-tab-space-tab-space]
+    E[Watermark Output<br/>Invisible whitespace sequence<br/>Added to end of text]
+
+    A1 --> B
+    A2 --> B
+    A3 --> B
+    B --> C
+    C --> D
+    D --> E

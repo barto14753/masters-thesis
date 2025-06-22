@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant TestScript as test.py
+    participant Server as Server
+    participant Watermark as Watermark Module
+    participant Ollama as LLM
+
+    TestScript->>Server: POST /rhyme (with topic, Basic Auth)
+    Server->>Server: check_auth()
+    Server->>Ollama: Generate rhyme (topic)
+    Ollama-->>Server: Rhyme text
+    Server->>Watermark: sign_message(rhyme, user, timestamp)
+    Watermark-->>Server: Watermark (whitespace-encoded)
+    Server->>Server: Insert watermark
+    Server-->>TestScript: Return rhyme (with watermark)
+
+    TestScript->>Server: POST /validate (with rhyme)
+    Server->>Watermark: extract_metadata(rhyme)
+    Watermark-->>Server: Extracted timestamp, signature
+    Server-->>TestScript: Return validation result
