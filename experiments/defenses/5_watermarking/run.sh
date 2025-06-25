@@ -4,7 +4,7 @@ echo "Creating the custom model..."
 ollama create rhymegen-model -f Modelfile
 
 echo "Starting the server..."
-python3 server.py > server.log 2>&1 &
+python server.py > server.log 2>&1 &
 SERVER_PID=$!
 
 # Wait for server to be ready

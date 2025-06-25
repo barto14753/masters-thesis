@@ -3,11 +3,13 @@ sequenceDiagram
     participant Server as Server
     participant Watermark as Watermark Module
     participant Ollama as LLM
+    participant DB as Server DB
 
     TestScript->>Server: POST /rhyme (with topic, Basic Auth)
     Server->>Server: check_auth()
     Server->>Ollama: Generate rhyme (topic)
     Ollama-->>Server: Rhyme text
+    Server->>DB: Save (rhyme, user, timestamp)
     Server->>Watermark: sign_message(rhyme, user, timestamp)
     Watermark-->>Server: Watermark (whitespace-encoded)
     Server->>Server: Insert watermark
@@ -15,5 +17,15 @@ sequenceDiagram
 
     TestScript->>Server: POST /validate (with rhyme)
     Server->>Watermark: extract_metadata(rhyme)
-    Watermark-->>Server: Extracted timestamp, signature
-    Server-->>TestScript: Return validation result
+    alt Watermark found
+        Watermark-->>Server: Extracted timestamp, signature
+        Server-->>TestScript: Return validation result
+    else Watermark missing
+        Server->>DB: Check similarity
+        alt >=75% match found
+            DB-->>Server: user, timestamp, original, percent copied
+            Server-->>TestScript: Return similarity info
+        else Not found
+            Server-->>TestScript: Return error
+        end
+    end

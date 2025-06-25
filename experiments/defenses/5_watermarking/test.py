@@ -29,3 +29,16 @@ validate_response = requests.post(
 )
 
 print("Validation Response:\n", validate_response.json())
+
+# Step 3: Validate rhyme with removed watermark (simulate attack)
+if response.status_code == 200:
+    lines = generated_rhyme.split("\n")
+    if len(lines) > 1:
+        lines[1] = ""  # Remove watermark line
+    tampered_rhyme = "\n".join(lines)
+    print("\nTampered Rhyme (no watermark):\n", tampered_rhyme)
+    tampered_validate_response = requests.post(
+        "http://127.0.0.1:5000/validate",
+        json={"rhyme": tampered_rhyme}
+    )
+    print("Validation Response for tampered rhyme:\n", tampered_validate_response.json())
