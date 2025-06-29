@@ -8,6 +8,8 @@ import re
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
+SECRET = "super_secret_watermark_salt"
+
 def encode_whitespace(data):
     """Encodes data into whitespace characters."""
     binary_data = ''.join(format(ord(char), '08b') for char in data)
@@ -20,8 +22,8 @@ def decode_whitespace(encoded_text):
     return ''.join(chr(int(char, 2)) for char in chars if len(char) == 8)
 
 def sign_message(message, user, timestamp):
-    """Generates a hidden watermark containing user and timestamp."""
-    hash_digest = hashlib.sha256((message + user + str(timestamp)).encode()).hexdigest()
+    """Generates a hidden watermark containing user and timestamp, salted with a secret."""
+    hash_digest = hashlib.sha256((message + user + str(timestamp) + SECRET).encode()).hexdigest()
     metadata = f"{user}|{timestamp}|{hash_digest[:16]}"
     encoded_signature = encode_whitespace(metadata)
 
@@ -32,7 +34,7 @@ def sign_message(message, user, timestamp):
     return encoded_signature
 
 def extract_metadata(rhyme_text):
-    """Extracts user and timestamp from a hidden watermark in the second line."""
+    """Extracts user and timestamp from a hidden watermark in the second line and validates the signature."""
     try:
         lines = rhyme_text.split("\n")
         if len(lines) < 2:
@@ -52,8 +54,15 @@ def extract_metadata(rhyme_text):
         decoded_metadata = decode_whitespace(watermark_line)
         logger.info(f"Decoded metadata: {decoded_metadata}")
 
-        user, timestamp, _ = decoded_metadata.split("|")
+        user, timestamp, sig_hash = decoded_metadata.split("|")
         logger.info(f"Extracted user: {user}, timestamp: {timestamp}")
+
+        # Validate signature
+        message = "\n".join([lines[0]] + lines[2:])  # Omit the watermark line
+        expected_hash = hashlib.sha256((message + user + str(timestamp) + SECRET).encode()).hexdigest()[:16]
+        if sig_hash != expected_hash:
+            logger.warning("Signature hash does not match! Possible tampering.")
+            return None
 
         return {"user": user, "timestamp": int(timestamp), "signature": watermark_line}
 
