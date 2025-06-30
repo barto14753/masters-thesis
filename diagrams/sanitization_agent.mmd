@@ -1,0 +1,42 @@
+sequenceDiagram
+    participant User as Patient/Doctor
+    participant Auth as Authentication
+    participant Server
+    participant LLM as Ollama LLM
+    participant Agent as Sanitization Agent
+    participant DB as Database
+
+    User->>Server: POST /query with Basic Auth
+    Server->>Auth: Verify credentials
+    
+    alt Invalid credentials
+        Auth-->>Server: Authentication failed
+        Server-->>User: 401 Unauthorized
+    else Valid credentials
+        Auth-->>Server: Authentication successful
+        
+        alt Patient accessing other patient's data
+            Server-->>User: 403 Forbidden
+        else Authorized access
+            Server->>DB: fetch patient data
+            DB-->>Server: patient data
+            
+            Server->>LLM: generate response (query, patient data)
+            LLM-->>Server: response
+            
+            alt use_sanitization = true
+                Server->>Agent: POST /sanitize {response, user_role, patient_id, username}
+                
+                alt user_role = "doctor"
+                    Agent->>Agent: apply minimal sanitization
+                else user_role = "patient"
+                    Agent->>Agent: sanitize insurance and sensitive diagnosis
+                end
+                
+                Agent-->>Server: sanitized_response
+                Server-->>User: response (sanitized)
+            else use_sanitization = false
+                Server-->>User: response (original)
+            end
+        end
+    end
