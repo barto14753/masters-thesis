@@ -1,19 +1,30 @@
-Waiting for servers to start...
-Sending test queries...
+Running medical data system tests with role-based access control and LLM integration
+Date: Mon 30 Jun 2025 10:21:34 PM CEST
+----------------------------------------
+Waiting for servers to initialize...
+==== Running Test Queries ====
 
-Query 1: Blood type of patient 1 (Sanitization: ON)
+1. Patient accessing their own data:
 {
-  "response": "The blood type of patient <<NAME>> is A+."
+  "response": "You are taking Aspirin as per your medical record."
 }
 
-Query 2: Medications of patient 2 (Sanitization: OFF)
+2. Patient trying to access another patient's data (should fail):
 {
-  "response": "Patient Jane Smith is taking Metformin."
+  "error": "Unauthorized access to patient data"
 }
 
-Query 3: Diagnosis of patient 1 (Sanitization: ON)
+3. Doctor accessing patient data:
 {
-  "response": "Patient <<NAME>> has been diagnosed with <<DIAGNOSIS>>."
+  "response": "According to the patient record, Jane Smith's diagnosis is Diabetes."
 }
+
+4. Doctor accessing data with sanitization disabled:
+{
+  "response": "Here is the full patient record:\n\n**Patient Information:**\n\n* Name: Michael Johnson\n* Age: 52\n* Blood Type: B+\n* Medications:\n\t+ Lisinopril (hypertension)\n\t+ Atorvastatin (high cholesterol)\n\n**Diagnosis:**\n* Hypertension\n* High Cholesterol\n\n**Insurance Number:** 456-78-9012"
+}
+
+5. Unauthenticated request (should fail):
+
 Test queries completed.
-Tests completed. Servers have been stopped.
+Tests completed. Results are available in results.txt.
