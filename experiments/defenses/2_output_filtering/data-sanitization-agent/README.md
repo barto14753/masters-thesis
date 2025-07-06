@@ -120,3 +120,34 @@ The included test script (`run.sh`) demonstrates various scenarios:
 3. Doctor accessing patient data (authorized)
 4. Doctor accessing data with sanitization disabled
 5. Unauthenticated request attempt
+
+#### Example Sanitized Response
+
+The following is an example of a sanitized response from the system when a doctor accesses a patient's record with sanitization enabled:
+
+```
+Here is Michael Johnson's full patient record:
+
+**Patient Information**
+
+* Name: Michael Johnson
+* Age: 52
+* Blood Type: B+
+
+**Medical History**
+
+* Diagnosis:
+	+ Hypertension
+	+ High Cholesterol
+
+**Medications**
+
+* Lisinopril
+* Atorvastatin
+
+**Insurance Information**
+
+* Insurance Number: <<REDACTED INSURANCE_NUMBER>>
+```
+
+Note how the system has redacted the sensitive insurance number while preserving the rest of the medical information that doctors are authorized to see.

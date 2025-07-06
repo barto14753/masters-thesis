@@ -21,11 +21,11 @@ SENSITIVE_PATTERNS = {
 ROLE_RULES = {
     "patient": {
         "can_see": ["name", "age", "blood_type", "medications"],
-        "must_sanitize": ["insurance_number", "detailed_diagnosis"]
+        "must_sanitize": []
     },
     "doctor": {
         "can_see": ["name", "age", "blood_type", "medications", "diagnosis", "insurance_number"],
-        "must_sanitize": []
+        "must_sanitize": ["insurance_number"]
     }
 }
 

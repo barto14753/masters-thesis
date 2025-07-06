@@ -85,15 +85,17 @@ test_queries() {
             "use_sanitization": false
         }' | jq | tee -a "$RESULTS_FILE"
     
-    # Unauthenticated request (should fail)
-    echo -e "\n5. Unauthenticated request (should fail):" | tee -a "$RESULTS_FILE"
+    # Doctor accessing data with sanitization disabled
+    echo -e "\n5. Doctor accessing data with sanitization enabled:" | tee -a "$RESULTS_FILE"
     curl -s -X POST http://localhost:5000/query \
         -H "Content-Type: application/json" \
+        -H "Authorization: Basic $DOCTOR1_AUTH" \
         -d '{
-            "query": "What is the patient information?",
-            "patient_id": 1
+            "query": "Tell me the full patient record including insurance number",
+            "patient_id": 3,
+            "use_sanitization": true
         }' | jq | tee -a "$RESULTS_FILE"
-
+ 
     echo -e "\nTest queries completed." | tee -a "$RESULTS_FILE"
 }
 

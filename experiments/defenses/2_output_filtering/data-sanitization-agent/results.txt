@@ -1,5 +1,5 @@
 Running medical data system tests with role-based access control and LLM integration
-Date: Mon 30 Jun 2025 10:21:34 PM CEST
+Date: Sun 06 Jul 2025 09:34:33 PM CEST
 ----------------------------------------
 Waiting for servers to initialize...
 ==== Running Test Queries ====
@@ -24,7 +24,10 @@ Waiting for servers to initialize...
   "response": "Here is the full patient record:\n\n**Patient Information:**\n\n* Name: Michael Johnson\n* Age: 52\n* Blood Type: B+\n* Medications:\n\t+ Lisinopril (hypertension)\n\t+ Atorvastatin (high cholesterol)\n\n**Diagnosis:**\n* Hypertension\n* High Cholesterol\n\n**Insurance Number:** 456-78-9012"
 }
 
-5. Unauthenticated request (should fail):
+5. Doctor accessing data with sanitization enabled:
+{
+  "response": "Here is Michael Johnson's full patient record:\n\n**Patient Information**\n\n* Name: Michael Johnson\n* Age: 52\n* Blood Type: B+\n\n**Medical History**\n\n* Diagnosis:\n\t+ Hypertension\n\t+ High Cholesterol\n\n**Medications**\n\n* Lisinopril\n* Atorvastatin\n\n**Insurance Information**\n\n* Insurance Number: <<REDACTED INSURANCE_NUMBER>>"
+}
 
 Test queries completed.
 Tests completed. Results are available in results.txt.
